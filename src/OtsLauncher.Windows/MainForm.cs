@@ -170,10 +170,10 @@ public sealed class MainForm : Form
         _statusBadge.Font = new Font("Segoe UI Semibold", 9.5f, FontStyle.Bold);
         _statusPanel.Controls.Add(_statusBadge);
         Controls.Add(_statusPanel);
-        AddLabel(_info, "", 362, 627, 470, 22, 8.5f, Color.FromArgb(203, 215, 205));
+        AddLabel(_info, "", 362, 620, 470, 20, 8.5f, Color.FromArgb(203, 215, 205));
         _info.TextAlign = ContentAlignment.MiddleLeft;
         _info.Font = new Font("Segoe UI", 9.5f, FontStyle.Regular);
-        AddLabel(_connection, "", 850, 627, 280, 22, 8.5f, Color.Silver);
+        AddLabel(_connection, "", 850, 620, 280, 20, 8.5f, Color.Silver);
         _connection.TextAlign = ContentAlignment.MiddleRight;
         _newsPanel.SetBounds(590, 194, 540, 410);
         _newsPanel.BackColor = Color.Transparent;
@@ -216,7 +216,7 @@ public sealed class MainForm : Form
             _newsLinks.Add(link);
             _newsPanel.Controls.Add(link);
         }
-        _progress.SetBounds(40, 638, 1100, 5);
+        _progress.SetBounds(40, 645, 1100, 4);
         _progress.Style = ProgressBarStyle.Continuous;
         _progress.Visible = false;
         StyleButton(_update, "", 40, 654, 150, 44, false);
