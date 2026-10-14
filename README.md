@@ -27,7 +27,7 @@ Output: `artifacts/launcher-installer/Tibernia-Setup.exe`.
 - Downloads are staged before replacement, so a failed update does not silently replace a valid file.
 - No certificate or signing secret is stored in this repository.
 
-See [SECURITY.md](SECURITY.md) and [CODE_SIGNING_POLICY.md](CODE_SIGNING_POLICY.md).
+See [SECURITY.md](SECURITY.md), [PRIVACY.md](PRIVACY.md) and [CODE_SIGNING_POLICY.md](CODE_SIGNING_POLICY.md).
 
 ## Code signing
 
