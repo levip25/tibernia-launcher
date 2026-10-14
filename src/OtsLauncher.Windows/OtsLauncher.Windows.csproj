@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>OtsLauncher.Windows</RootNamespace>
+    <AssemblyName>OtsLauncher</AssemblyName>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ApplicationIcon>..\..\assets\branding\ots-network-launcher-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OtsLauncher.Core\OtsLauncher.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\manifests\samples\network.manifest.json" Link="manifests\network.manifest.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\manifests\launcher.settings.json" Link="launcher.settings.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\assets\branding\*.png" Link="assets\branding\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\assets\branding\*.ico" Link="assets\branding\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\assets\branding\web\*.png" Link="assets\branding\web\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

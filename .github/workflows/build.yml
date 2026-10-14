@@ -1,0 +1,36 @@
+name: Build and test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Test
+        shell: pwsh
+        run: dotnet test .\OtsLauncher.sln -c Release
+      - name: Install Inno Setup
+        shell: pwsh
+        run: choco install innosetup --no-progress -y
+      - name: Build unsigned installer
+        shell: pwsh
+        run: .\scripts\Build-LauncherInstaller.ps1 -OutputDirectory .\artifacts\launcher-installer -AppVersion 0.0.${{ github.run_number }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tibernia-launcher-unsigned
+          path: |
+            artifacts/launcher-installer/Tibernia-Setup.exe
+            artifacts/launcher-installer/installer.json
+          if-no-files-found: error
+

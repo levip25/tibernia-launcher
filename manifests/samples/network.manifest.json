@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "2",
+  "generatedAt": "2026-09-12T00:00:00Z",
+  "servers": [
+    {
+      "id": "latest", "name": "Latest", "protocol": "canary-current", "host": "127.0.0.1", "loginPort": 7271, "gamePort": 7272,
+      "packages": {
+        "windows-x64": {"packageVersion":"latest-dev-1","assetsVersion":"latest-dev-1-assets","launch":{"kind":"executable","entry":"ots-latest.exe"},"appFiles":[{"path":"ots-latest.exe","size":0,"sha256":"0000000000000000000000000000000000000000000000000000000000000000","url":"https://cdn.ots-network.example/clients/latest/windows-x64/ots-latest.exe"}],"assetFiles":[{"path":"config/ots-packaged.lua","size":0,"sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","url":"https://cdn.ots-network.example/clients/latest/windows-x64/config/ots-packaged.lua"}]},
+        "android-arm64": {"packageVersion":"latest-mobile-1","assetsVersion":"latest-mobile-1-assets","launch":{"kind":"package","entry":"com.otsnetwork.latest"},"appFiles":[],"assetFiles":[{"path":"resources/.keep","size":0,"sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","url":"https://cdn.ots-network.example/clients/latest/android-arm64/resources/.keep"}]},
+        "ios-arm64": {"packageVersion":"latest-mobile-1","assetsVersion":"latest-mobile-1-assets","launch":{"kind":"package","entry":"com.otsnetwork.latest"},"appFiles":[],"assetFiles":[{"path":"resources/.keep","size":0,"sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","url":"https://cdn.ots-network.example/clients/latest/ios-arm64/resources/.keep"}]}
+      }
+    },
+    {
+      "id": "custom", "name": "Custom", "protocol": "canary-custom", "host": "127.0.0.1", "loginPort": 7471, "gamePort": 7472,
+      "packages": {
+        "windows-x64": {"packageVersion":"custom-dev-1","assetsVersion":"custom-dev-1-assets","launch":{"kind":"executable","entry":"ots-custom.exe"},"appFiles":[{"path":"ots-custom.exe","size":0,"sha256":"0000000000000000000000000000000000000000000000000000000000000000","url":"https://cdn.ots-network.example/clients/custom/windows-x64/ots-custom.exe"}],"assetFiles":[{"path":"config/ots-packaged.lua","size":0,"sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","url":"https://cdn.ots-network.example/clients/custom/windows-x64/config/ots-packaged.lua"}]},
+        "android-arm64": {"packageVersion":"custom-mobile-1","assetsVersion":"custom-mobile-1-assets","launch":{"kind":"package","entry":"com.otsnetwork.custom"},"appFiles":[],"assetFiles":[{"path":"resources/.keep","size":0,"sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","url":"https://cdn.ots-network.example/clients/custom/android-arm64/resources/.keep"}]},
+        "ios-arm64": {"packageVersion":"custom-mobile-1","assetsVersion":"custom-mobile-1-assets","launch":{"kind":"package","entry":"com.otsnetwork.custom"},"appFiles":[],"assetFiles":[{"path":"resources/.keep","size":0,"sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","url":"https://cdn.ots-network.example/clients/custom/ios-arm64/resources/.keep"}]}
+      }
+    },
+    {
+      "id": "classic", "name": "Classic 7.72", "protocol": "772", "host": "127.0.0.1", "loginPort": 7171, "gamePort": 7172,
+      "packages": {
+        "windows-x64": {"packageVersion":"classic-772-1","assetsVersion":"classic-772-1-assets","launch":{"kind":"executable","entry":"ots-classic.exe"},"appFiles":[{"path":"ots-classic.exe","size":0,"sha256":"0000000000000000000000000000000000000000000000000000000000000000","url":"https://cdn.ots-network.example/clients/classic/windows-x64/ots-classic.exe"}],"assetFiles":[{"path":"config/ots-packaged.lua","size":0,"sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","url":"https://cdn.ots-network.example/clients/classic/windows-x64/config/ots-packaged.lua"}]},
+        "android-arm64": {"packageVersion":"classic-mobile-1","assetsVersion":"classic-mobile-1-assets","launch":{"kind":"package","entry":"com.otsnetwork.classic"},"appFiles":[],"assetFiles":[{"path":"resources/.keep","size":0,"sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","url":"https://cdn.ots-network.example/clients/classic/android-arm64/resources/.keep"}]},
+        "ios-arm64": {"packageVersion":"classic-mobile-1","assetsVersion":"classic-mobile-1-assets","launch":{"kind":"package","entry":"com.otsnetwork.classic"},"appFiles":[],"assetFiles":[{"path":"resources/.keep","size":0,"sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","url":"https://cdn.ots-network.example/clients/classic/ios-arm64/resources/.keep"}]}
+      }
+    },
+    {
+      "id": "war", "name": "WAR 8.0", "protocol": "800", "host": "127.0.0.1", "loginPort": 7371, "gamePort": 7372,
+      "packages": {
+        "windows-x64": {"packageVersion":"war-80-1","assetsVersion":"war-80-1-assets","launch":{"kind":"executable","entry":"ots-war.exe"},"appFiles":[{"path":"ots-war.exe","size":0,"sha256":"0000000000000000000000000000000000000000000000000000000000000000","url":"https://cdn.ots-network.example/clients/war/windows-x64/ots-war.exe"}],"assetFiles":[{"path":"config/ots-packaged.lua","size":0,"sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","url":"https://cdn.ots-network.example/clients/war/windows-x64/config/ots-packaged.lua"}]},
+        "android-arm64": {"packageVersion":"war-mobile-1","assetsVersion":"war-mobile-1-assets","launch":{"kind":"package","entry":"com.otsnetwork.war"},"appFiles":[],"assetFiles":[{"path":"resources/.keep","size":0,"sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","url":"https://cdn.ots-network.example/clients/war/android-arm64/resources/.keep"}]},
+        "ios-arm64": {"packageVersion":"war-mobile-1","assetsVersion":"war-mobile-1-assets","launch":{"kind":"package","entry":"com.otsnetwork.war"},"appFiles":[],"assetFiles":[{"path":"resources/.keep","size":0,"sha256":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","url":"https://cdn.ots-network.example/clients/war/ios-arm64/resources/.keep"}]}
+      }
+    }
+  ]
+}

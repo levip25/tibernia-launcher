@@ -1,0 +1,11 @@
+artifacts/
+bin/
+obj/
+.vs/
+TestResults/
+*.user
+*.suo
+*.pfx
+*.p12
+*.snk
+

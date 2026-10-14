@@ -1,0 +1,54 @@
+name: SignPath release
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-sign:
+    if: ${{ github.repository == 'levip25/tibernia-launcher' }}
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Test
+        shell: pwsh
+        run: dotnet test .\OtsLauncher.sln -c Release
+      - name: Install Inno Setup
+        shell: pwsh
+        run: choco install innosetup --no-progress -y
+      - name: Build unsigned installer
+        shell: pwsh
+        run: .\scripts\Build-LauncherInstaller.ps1 -OutputDirectory .\artifacts\launcher-installer -AppVersion 1.0.${{ github.run_number }}
+      - name: Upload unsigned artifact
+        id: upload-unsigned
+        uses: actions/upload-artifact@v4
+        with:
+          name: tibernia-launcher-signing-input
+          path: artifacts/launcher-installer/Tibernia-Setup.exe
+          if-no-files-found: error
+      - name: Submit to SignPath
+        uses: signpath/github-action-submit-signing-request@v3
+        with:
+          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+          organization-id: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
+          project-slug: ${{ vars.SIGNPATH_PROJECT_SLUG }}
+          signing-policy-slug: ${{ vars.SIGNPATH_SIGNING_POLICY_SLUG }}
+          artifact-configuration-slug: ${{ vars.SIGNPATH_ARTIFACT_CONFIGURATION_SLUG }}
+          github-artifact-id: ${{ steps.upload-unsigned.outputs.artifact-id }}
+          wait-for-completion: true
+          output-artifact-directory: artifacts/signed
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tibernia-launcher-signed
+          path: artifacts/signed
+          if-no-files-found: error
+
